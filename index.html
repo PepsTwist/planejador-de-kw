@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KW Planner - Planejador de Keywords</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>KW Planner</h1>
+      <p class="tagline">Planejador de Keywords e Análise SEO</p>
+      <div class="api-status" id="apiStatus">
+        <span class="status-dot"></span>
+        <span id="apiStatusText">Verificando API...</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="config">
+        <label for="apiUrl">URL da API (backend):</label>
+        <input type="url" id="apiUrl" placeholder="https://sua-api.onrender.com" value="">
+        <small>Deixe em branco para usar a mesma origem (se a API estiver no mesmo domínio).</small>
+      </section>
+
+      <section class="actions">
+        <h2>Escolha uma análise</h2>
+        <div class="cards">
+          <div class="card" data-option="1">
+            <h3>1. Analisar Site Completo</h3>
+            <p>Extrai keywords de todo o site via sitemap e subdomínios.</p>
+            <div class="card-form hidden" id="form1">
+              <input type="url" id="domain1" placeholder="https://exemplo.com">
+              <label><input type="checkbox" id="subdomains1"> Incluir subdomínios</label>
+            </div>
+          </div>
+          <div class="card" data-option="2">
+            <h3>2. Pesquisar por Nicho</h3>
+            <p>Analisa concorrentes e keywords do nicho.</p>
+            <div class="card-form hidden" id="form2">
+              <input type="text" id="niche2" placeholder="Ex: marketing digital">
+            </div>
+          </div>
+          <div class="card" data-option="3">
+            <h3>3. Analisar Link Específico</h3>
+            <p>Extrai keywords de uma URL.</p>
+            <div class="card-form hidden" id="form3">
+              <input type="url" id="url3" placeholder="https://exemplo.com/pagina">
+            </div>
+          </div>
+          <div class="card" data-option="4">
+            <h3>4. Encontrar Variações</h3>
+            <p>Variações e sinônimos de uma keyword.</p>
+            <div class="card-form hidden" id="form4">
+              <input type="text" id="keyword4" placeholder="Ex: marketing digital">
+            </div>
+          </div>
+          <div class="card" data-option="5">
+            <h3>5. Analisar Tema Específico</h3>
+            <p>Tema/assunto no site e oportunidades.</p>
+            <div class="card-form hidden" id="form5">
+              <input type="url" id="domain5" placeholder="https://exemplo.com">
+              <input type="text" id="theme5" placeholder="Tema: ex. SEO">
+            </div>
+          </div>
+          <div class="card" data-option="6">
+            <h3>6. Content Pruning</h3>
+            <p>Keyword principal por página e páginas para pruning.</p>
+            <div class="card-form hidden" id="form6">
+              <input type="url" id="domain6" placeholder="https://exemplo.com">
+              <label><input type="checkbox" id="subdomains6"> Incluir subdomínios</label>
+            </div>
+          </div>
+          <div class="card" data-option="7">
+            <h3>7. Dashboard de Aprendizado</h3>
+            <p>Insights e padrões do sistema de IA.</p>
+            <div class="card-form hidden" id="form7"></div>
+          </div>
+          <div class="card" data-option="8">
+            <h3>8. Exportar Dados de IA</h3>
+            <p>Exporta histórico do sistema de aprendizado.</p>
+            <div class="card-form hidden" id="form8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="run-area">
+        <button type="button" id="btnRun" disabled>Executar análise</button>
+        <span class="running hidden" id="running">Executando... (pode levar vários minutos)</span>
+      </section>
+
+      <section class="output">
+        <h2>Saída</h2>
+        <pre id="output"></pre>
+        <div class="exports" id="exports"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>KW Planner Web — Frontend em GitHub Pages, backend em servidor próprio.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
