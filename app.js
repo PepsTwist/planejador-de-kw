@@ -13,7 +13,7 @@
   const exportsEl = document.getElementById("exports");
 
   // Se a página estiver em GitHub Pages (seu-usuario.github.io), use a URL da API que você configurar
-  const defaultApiUrl = "";
+  const defaultApiUrl = "https://5776a0187ca2.ngrok-free.app";
   if (!apiUrlInput.value) {
     apiUrlInput.value = defaultApiUrl;
   }
